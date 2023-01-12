@@ -6,15 +6,18 @@ namespace deneme1
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Musteri")]
-    public partial class Musteri
+    [Table("BorcOdeme")]
+    public partial class BorcOdeme
     {
         public short id { get; set; }
 
         [Required]
         [StringLength(10)]
-        public string musteriadi { get; set; }
+        public string tedarikciadi { get; set; }
 
-        public double? bakiye { get; set; }
+        [Column(TypeName = "date")]
+        public DateTime odemetarihi { get; set; }
+
+        public double miktar { get; set; }
     }
 }

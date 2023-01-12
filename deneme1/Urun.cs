@@ -22,5 +22,11 @@ namespace deneme1
         public double? kar_marji { get; set; }
 
         public long? barkod { get; set; }
+
+        public long? irsaliyeno { get; set; }
+
+        public short? miktar { get; set; }
+
+        public double? karlilik { get; set; }
     }
 }

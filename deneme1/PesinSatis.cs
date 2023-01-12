@@ -6,15 +6,20 @@ namespace deneme1
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Musteri")]
-    public partial class Musteri
+    public partial class PesinSatis
     {
         public short id { get; set; }
 
         [Required]
         [StringLength(10)]
-        public string musteriadi { get; set; }
+        public string saticiadi { get; set; }
 
-        public double? bakiye { get; set; }
+        public short urunid { get; set; }
+
+        public double miktar { get; set; }
+
+        [Required]
+        [StringLength(10)]
+        public string musteriadi { get; set; }
     }
 }
