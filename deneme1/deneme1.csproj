@@ -93,6 +93,12 @@
     <Compile Include="Musteri.cs" />
     <Compile Include="Odeme.cs" />
     <Compile Include="PesinSatis.cs" />
+    <Compile Include="Procurement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Procurement.Designer.cs">
+      <DependentUpon>Procurement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Product.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procurement.resx">
+      <DependentUpon>Procurement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Product.resx">
       <DependentUpon>Product.cs</DependentUpon>
