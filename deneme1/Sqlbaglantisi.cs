@@ -11,7 +11,9 @@ namespace deneme1
     {
         public SqlConnection baglanti()
         {
-            SqlConnection baglan = new SqlConnection(@"Data Source=DESKTOP-NUUA6VV\SQLEXPRESS;Initial Catalog=proje_deneme;Integrated Security=True");
+            string machineName = Environment.MachineName;
+            string connectionHost = string.Format(@"Data Source={0}\SQLEXPRESS;Initial Catalog=proje_deneme;Integrated Security=True",machineName);
+            SqlConnection baglan = new SqlConnection(connectionHost);
             baglan.Open();
             return baglan;
         }
