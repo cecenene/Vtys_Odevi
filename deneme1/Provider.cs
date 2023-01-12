@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace deneme1
 {
@@ -16,5 +17,7 @@ namespace deneme1
         {
             InitializeComponent();
         }
+
+        
     }
 }

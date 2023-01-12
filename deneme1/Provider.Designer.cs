@@ -28,23 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.Uedit = new System.Windows.Forms.Button();
-            this.Upassword = new System.Windows.Forms.RichTextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.PRedit = new System.Windows.Forms.Button();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label4 = new System.Windows.Forms.Label();
-            this.Uback = new System.Windows.Forms.Button();
-            this.Udelete = new System.Windows.Forms.Button();
-            this.Uadd = new System.Windows.Forms.Button();
-            this.Uname = new System.Windows.Forms.RichTextBox();
+            this.PRback = new System.Windows.Forms.Button();
+            this.PRdelete = new System.Windows.Forms.Button();
+            this.PRadd = new System.Windows.Forms.Button();
+            this.PRname = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
@@ -106,65 +104,43 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Market Satış Programı";
             // 
-            // Uedit
+            // PRedit
             // 
-            this.Uedit.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.Uedit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Uedit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Uedit.ForeColor = System.Drawing.Color.White;
-            this.Uedit.Location = new System.Drawing.Point(295, 362);
-            this.Uedit.Name = "Uedit";
-            this.Uedit.Size = new System.Drawing.Size(118, 45);
-            this.Uedit.TabIndex = 48;
-            this.Uedit.Text = "Edit";
-            this.Uedit.UseVisualStyleBackColor = false;
-            // 
-            // Upassword
-            // 
-            this.Upassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Upassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Upassword.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.Upassword.Location = new System.Drawing.Point(171, 294);
-            this.Upassword.Name = "Upassword";
-            this.Upassword.Size = new System.Drawing.Size(224, 34);
-            this.Upassword.TabIndex = 47;
-            this.Upassword.Text = "";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label6.Location = new System.Drawing.Point(29, 303);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(98, 25);
-            this.label6.TabIndex = 46;
-            this.label6.Text = "Password";
+            this.PRedit.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.PRedit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PRedit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PRedit.ForeColor = System.Drawing.Color.White;
+            this.PRedit.Location = new System.Drawing.Point(171, 362);
+            this.PRedit.Name = "PRedit";
+            this.PRedit.Size = new System.Drawing.Size(118, 45);
+            this.PRedit.TabIndex = 48;
+            this.PRedit.Text = "Edit";
+            this.PRedit.UseVisualStyleBackColor = false;
             // 
             // guna2DataGridView1
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.guna2DataGridView1.ColumnHeadersHeight = 22;
             this.guna2DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.Location = new System.Drawing.Point(483, 152);
+            this.guna2DataGridView1.Location = new System.Drawing.Point(483, 168);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
             this.guna2DataGridView1.RowHeadersVisible = false;
             this.guna2DataGridView1.RowHeadersWidth = 51;
@@ -198,68 +174,68 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label4.Location = new System.Drawing.Point(660, 124);
+            this.label4.Location = new System.Drawing.Point(659, 126);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(88, 25);
+            this.label4.Size = new System.Drawing.Size(119, 25);
             this.label4.TabIndex = 44;
-            this.label4.Text = "User List";
+            this.label4.Text = "Provider List";
             // 
-            // Uback
+            // PRback
             // 
-            this.Uback.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.Uback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Uback.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Uback.ForeColor = System.Drawing.Color.White;
-            this.Uback.Location = new System.Drawing.Point(171, 413);
-            this.Uback.Name = "Uback";
-            this.Uback.Size = new System.Drawing.Size(118, 45);
-            this.Uback.TabIndex = 43;
-            this.Uback.Text = "Back";
-            this.Uback.UseVisualStyleBackColor = false;
+            this.PRback.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.PRback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PRback.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PRback.ForeColor = System.Drawing.Color.White;
+            this.PRback.Location = new System.Drawing.Point(171, 413);
+            this.PRback.Name = "PRback";
+            this.PRback.Size = new System.Drawing.Size(118, 45);
+            this.PRback.TabIndex = 43;
+            this.PRback.Text = "Back";
+            this.PRback.UseVisualStyleBackColor = false;
             // 
-            // Udelete
+            // PRdelete
             // 
-            this.Udelete.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.Udelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Udelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Udelete.ForeColor = System.Drawing.Color.White;
-            this.Udelete.Location = new System.Drawing.Point(171, 362);
-            this.Udelete.Name = "Udelete";
-            this.Udelete.Size = new System.Drawing.Size(118, 45);
-            this.Udelete.TabIndex = 42;
-            this.Udelete.Text = "Delete";
-            this.Udelete.UseVisualStyleBackColor = false;
+            this.PRdelete.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.PRdelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PRdelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PRdelete.ForeColor = System.Drawing.Color.White;
+            this.PRdelete.Location = new System.Drawing.Point(295, 362);
+            this.PRdelete.Name = "PRdelete";
+            this.PRdelete.Size = new System.Drawing.Size(118, 45);
+            this.PRdelete.TabIndex = 42;
+            this.PRdelete.Text = "Delete";
+            this.PRdelete.UseVisualStyleBackColor = false;
             // 
-            // Uadd
+            // PRadd
             // 
-            this.Uadd.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.Uadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Uadd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Uadd.ForeColor = System.Drawing.Color.White;
-            this.Uadd.Location = new System.Drawing.Point(47, 362);
-            this.Uadd.Name = "Uadd";
-            this.Uadd.Size = new System.Drawing.Size(118, 45);
-            this.Uadd.TabIndex = 41;
-            this.Uadd.Text = "Add";
-            this.Uadd.UseVisualStyleBackColor = false;
+            this.PRadd.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.PRadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PRadd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PRadd.ForeColor = System.Drawing.Color.White;
+            this.PRadd.Location = new System.Drawing.Point(47, 362);
+            this.PRadd.Name = "PRadd";
+            this.PRadd.Size = new System.Drawing.Size(118, 45);
+            this.PRadd.TabIndex = 41;
+            this.PRadd.Text = "Add";
+            this.PRadd.UseVisualStyleBackColor = false;
             // 
-            // Uname
+            // PRname
             // 
-            this.Uname.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Uname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Uname.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.Uname.Location = new System.Drawing.Point(173, 232);
-            this.Uname.Name = "Uname";
-            this.Uname.Size = new System.Drawing.Size(224, 34);
-            this.Uname.TabIndex = 40;
-            this.Uname.Text = "";
+            this.PRname.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.PRname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PRname.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.PRname.Location = new System.Drawing.Point(168, 173);
+            this.PRname.Name = "PRname";
+            this.PRname.Size = new System.Drawing.Size(224, 34);
+            this.PRname.TabIndex = 40;
+            this.PRname.Text = "";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label3.Location = new System.Drawing.Point(29, 232);
+            this.label3.Location = new System.Drawing.Point(24, 173);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(141, 25);
             this.label3.TabIndex = 39;
@@ -270,15 +246,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(958, 488);
-            this.Controls.Add(this.Uedit);
-            this.Controls.Add(this.Upassword);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.PRedit);
             this.Controls.Add(this.guna2DataGridView1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.Uback);
-            this.Controls.Add(this.Udelete);
-            this.Controls.Add(this.Uadd);
-            this.Controls.Add(this.Uname);
+            this.Controls.Add(this.PRback);
+            this.Controls.Add(this.PRdelete);
+            this.Controls.Add(this.PRadd);
+            this.Controls.Add(this.PRname);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -300,15 +274,13 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button Uedit;
-        private System.Windows.Forms.RichTextBox Upassword;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button PRedit;
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button Uback;
-        private System.Windows.Forms.Button Udelete;
-        private System.Windows.Forms.Button Uadd;
-        private System.Windows.Forms.RichTextBox Uname;
+        private System.Windows.Forms.Button PRback;
+        private System.Windows.Forms.Button PRdelete;
+        private System.Windows.Forms.Button PRadd;
+        private System.Windows.Forms.RichTextBox PRname;
         private System.Windows.Forms.Label label3;
     }
 }
