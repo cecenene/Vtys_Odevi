@@ -15,7 +15,7 @@ namespace deneme1
         [StringLength(10)]
         public string tedarikciadi { get; set; }
 
-        public short urunid { get; set; }
+        public string tur { get; set; }
 
         public double miktar { get; set; }
 
