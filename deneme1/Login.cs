@@ -27,7 +27,7 @@ namespace deneme1
 
                 try
                 {
-                    ReadOrderData(LuserId.Text.Trim(),Lpassword.Text.Trim());
+                    LoginFunction(LuserId.Text.Trim(),Lpassword.Text.Trim());
                 }
                 catch (Exception Myex)
                 {
@@ -41,7 +41,7 @@ namespace deneme1
               MessageBox.Show(Myex.Message);
             }
         }
-        private static void ReadOrderData(string kullaniciad,string password)
+        private static void LoginFunction(string kullaniciad,string password)
 
         {
             string machineName = Environment.MachineName;
