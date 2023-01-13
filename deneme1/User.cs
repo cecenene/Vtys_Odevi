@@ -127,5 +127,7 @@ namespace deneme1
             MainForm main = new MainForm();
             main.Show();
         }
+
+        
     }
 }
