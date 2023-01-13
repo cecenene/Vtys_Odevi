@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.LuserId = new System.Windows.Forms.RichTextBox();
+            this.Lpassword = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,17 +52,6 @@
             this.panel1.Size = new System.Drawing.Size(358, 488);
             this.panel1.TabIndex = 0;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(78, 110);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(204, 25);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Market Satış Programı";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -74,14 +63,25 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Slogan ";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(78, 110);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(204, 25);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Market Satış Programı";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.label3.Location = new System.Drawing.Point(617, 53);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 25);
+            this.label3.Size = new System.Drawing.Size(101, 39);
             this.label3.TabIndex = 3;
             this.label3.Text = "Login";
             // 
@@ -99,6 +99,7 @@
             this.guna2Button1.Size = new System.Drawing.Size(180, 45);
             this.guna2Button1.TabIndex = 4;
             this.guna2Button1.Text = "Login";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // label4
             // 
@@ -133,34 +134,34 @@
             this.label6.TabIndex = 7;
             this.label6.Text = "UserID";
             // 
-            // richTextBox1
+            // LuserId
             // 
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.richTextBox1.Location = new System.Drawing.Point(555, 155);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(224, 34);
-            this.richTextBox1.TabIndex = 8;
-            this.richTextBox1.Text = "";
+            this.LuserId.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.LuserId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LuserId.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.LuserId.Location = new System.Drawing.Point(555, 155);
+            this.LuserId.Name = "LuserId";
+            this.LuserId.Size = new System.Drawing.Size(224, 34);
+            this.LuserId.TabIndex = 8;
+            this.LuserId.Text = "";
             // 
-            // maskedTextBox1
+            // Lpassword
             // 
-            this.maskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox1.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.maskedTextBox1.Location = new System.Drawing.Point(555, 258);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(224, 23);
-            this.maskedTextBox1.TabIndex = 10;
+            this.Lpassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Lpassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lpassword.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.Lpassword.Location = new System.Drawing.Point(555, 258);
+            this.Lpassword.Name = "Lpassword";
+            this.Lpassword.Size = new System.Drawing.Size(224, 23);
+            this.Lpassword.TabIndex = 10;
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(958, 488);
-            this.Controls.Add(this.maskedTextBox1);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.Lpassword);
+            this.Controls.Add(this.LuserId);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -188,7 +189,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.RichTextBox LuserId;
+        private System.Windows.Forms.MaskedTextBox Lpassword;
     }
 }
