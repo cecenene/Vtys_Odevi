@@ -27,7 +27,10 @@ namespace deneme1
 
                 try
                 {
-                    LoginFunction(LuserId.Text.Trim(),Lpassword.Text.Trim());
+                    AuthUser(LuserId.Text.Trim(),Lpassword.Text.Trim());
+                    this.Hide();
+                    MainForm mainForm = new MainForm();
+                    mainForm.Show();
                 }
                 catch (Exception Myex)
                 {
@@ -41,7 +44,7 @@ namespace deneme1
               MessageBox.Show(Myex.Message);
             }
         }
-        private static void LoginFunction(string kullaniciad,string password)
+        private static void AuthUser(string kullaniciad,string password)
 
         {
             string machineName = Environment.MachineName;

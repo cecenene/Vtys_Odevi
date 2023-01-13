@@ -27,5 +27,12 @@ namespace deneme1
             Application.Exit();
 
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login login = new Login();
+            login.Show();
+        }
     }
 }

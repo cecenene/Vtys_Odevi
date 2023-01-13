@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace deneme1
 {
@@ -29,24 +30,30 @@ namespace deneme1
             {
                 try
                 {
+
                     Tedarik tblpm = new Tedarik();
                     tblpm.tedarikciadi = PMname.Text;
                     tblpm.tur = PMtype.Text;
                     tblpm.miktar = Convert.ToDouble(PMamount.Text);
                     tblpm.alisfiyat = Convert.ToDouble(PMprice.Text);
-                    string tedarikciadi = PMname.Text;
-                    Tedarikci tblp = ent.Tedarikci.First(f => f.tedarikciadi == tedarikciadi);
-                    Random rand = new Random();
-                    long randnum2 = (long)(rand.NextDouble() * 9999999999999) + 1000000000000;                   
-                    tblpm.irsaliyenumarasi = randnum2;
-                    ent.Tedarik.Add(tblpm);
-                    ent.SaveChanges();
-                    PMtype.Clear();
-                    PMamount.Clear();
-                    PMname.Clear();
-                    PMprice.Clear();
-                    MessageBox.Show("Product Successfully Added");
-                    guna2DataGridView1.DataSource = ent.Tedarik.ToList();
+                    try
+                    {
+                        ProviderCheck(PMname.Text.Trim());
+                        Random rand = new Random();
+                        long randnum2 = (long)(rand.NextDouble() * 9999999999999) + 1000000000000;                   
+                        tblpm.irsaliyenumarasi = randnum2;
+                        ent.Tedarik.Add(tblpm);
+                        ent.SaveChanges();
+                        PMtype.Clear();
+                        PMamount.Clear();
+                        PMname.Clear();
+                        PMprice.Clear();
+                        guna2DataGridView1.DataSource = ent.Tedarik.ToList();
+                    }
+                    catch (Exception Myex)
+                    {
+                        MessageBox.Show(Myex.Message);
+                    }
 
                 }
                 catch (Exception Myex)
@@ -90,6 +97,40 @@ namespace deneme1
             this.Hide();
             MainForm main = new MainForm();
             main.Show();
+        }
+
+        private static void ProviderCheck(string tedarikciAd)
+
+        {
+            string machineName = Environment.MachineName;
+            string connectionHost = string.Format(@"Data Source={0}\SQLEXPRESS;Initial Catalog=proje_deneme;Integrated Security=True", machineName);
+            string connectionString = connectionHost;
+            string queryString =
+                "SELECT tedarikciadi FROM dbo.Tedarikci;";
+            using (SqlConnection connection = new SqlConnection(
+                       connectionString))
+            {
+                SqlCommand command = new SqlCommand(
+                    queryString, connection);
+                connection.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string tedarikciAdiLabel = Convert.ToString(reader[0]).Trim();
+                        if (tedarikciAdiLabel == tedarikciAd)
+                        {
+                            string succesMessage = "Basarili bir sekilde eklendi";
+                            MessageBox.Show(succesMessage);
+                            return;
+                        }
+
+                    }
+
+                }
+            }
+            string dangerMessage = "Boyle bir tedarikci bulunmamaktadır!";
+            throw new InvalidCastException(dangerMessage);
         }
 
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
