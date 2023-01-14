@@ -126,5 +126,7 @@ namespace deneme1
             Ptype.Text = guna2DataGridView1.SelectedRows[0].Cells[1].Value.ToString();
             Pprice.Text = guna2DataGridView1.SelectedRows[0].Cells[2].Value.ToString();
         }
+
+        
     }
 }
