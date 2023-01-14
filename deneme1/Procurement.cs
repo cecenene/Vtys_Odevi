@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.IO;
 
 namespace deneme1
 {
@@ -44,6 +46,7 @@ namespace deneme1
                         Random rand = new Random();
                         long randnum2 = (long)(rand.NextDouble() * 9999999999999) + 1000000000000;                   
                         tblpm.irsaliyenumarasi = randnum2;
+     
                         ent.Tedarik.Add(tblpm);
                         ent.SaveChanges();
                         PMtype.Clear();
@@ -67,24 +70,36 @@ namespace deneme1
 
         private void PMdelete_Click(object sender, EventArgs e)
         {
-            if (PMname.Text == "")
+            if (PMprice.Text == "" || PMamount.Text == "")
             {
                 MessageBox.Show("Missing information");
             }
             else
-            {
-                try
+            {   try
                 {
-                    string tedarikciadi = PMname.Text;
-                    Tedarik tblpm = ent.Tedarik.First(f => f.tedarikciadi == tedarikciadi);
-                    ent.Tedarik.Remove(tblpm);
-                    ent.SaveChanges();
-                    PMtype.Clear();
-                    PMamount.Clear();
-                    PMname.Clear();
-                    PMprice.Clear();
-                    MessageBox.Show("Product Successfully Removed");
-                    guna2DataGridView1.DataSource = ent.Tedarik.ToList();
+                    long irsaliyeNo = Convert.ToInt64(PMprice.Text);
+                        double amount = Convert.ToDouble(PMamount.Text);
+                        Tedarik tblpm = new Tedarik();
+                    //Tedarik tblpm = ent.Tedarik.First(f => Convert.ToInt64(f.irsaliyenumarasi) == irsaliyeNo);
+                    try
+                    {
+                        Tuple<double, double> product = ProcurementCheck(amount, irsaliyeNo);
+                        Tedarik tedarik = ent.Tedarik.Find(product.Item1);
+                        tedarik.miktar = product.Item2;
+                        string text = tedarik.id+" " + tedarik.tedarikciadi + " " + tedarik.tur + " "+ amount+" " + tedarik.alisfiyat +" " + tedarik.irsaliyenumarasi ;
+                        File.WriteAllText("tedarik.txt", text);
+                        ent.SaveChanges();
+                        PMtype.Clear();
+                        PMamount.Clear();
+                        PMname.Clear();
+                        PMprice.Clear();
+                        guna2DataGridView1.DataSource = ent.Tedarik.ToList();
+
+                    }
+                    catch (Exception Myex)
+                    {
+                        MessageBox.Show(Myex.Message);
+                    }
 
                 }
                 catch (Exception Myex)
@@ -132,6 +147,59 @@ namespace deneme1
                 }
             }
             string dangerMessage = "Boyle bir tedarikci bulunmamaktadır!";
+            throw new InvalidCastException(dangerMessage);
+        }
+
+        private static Tuple<double,double> ProcurementCheck(double miktarLabel,long irsaliyeNoLabel)
+
+        {
+            string machineName = Environment.MachineName;
+            string connectionHost = string.Format(@"Data Source={0}\SQLEXPRESS;Initial Catalog=proje_deneme;Integrated Security=True", machineName);
+            string connectionString = connectionHost;
+            string queryString =
+                "SELECT miktar, irsaliyenumarasi, id FROM dbo.Tedarik;";
+            using (SqlConnection connection = new SqlConnection(
+                       connectionString))
+            {
+                SqlCommand command = new SqlCommand(
+                    queryString, connection);
+                connection.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string miktar = Convert.ToString(reader[0]).Trim();
+                        string irsaliyeNo = Convert.ToString(reader[1]).Trim();
+                        string id = Convert.ToString(reader[2]).Trim();
+
+
+                        if (Convert.ToString(irsaliyeNoLabel) == irsaliyeNo )
+                        {
+                            if (Convert.ToDouble(miktar) == 0)
+                            {
+                                string productEmptyError = "Tedarikcide urun kalmamis!";
+                                throw new InvalidCastException(productEmptyError);
+                            }
+                            else if(Convert.ToDouble(miktarLabel) - Convert.ToDouble(miktar) > 0 )
+                            {
+                                string productSizeError = "Urun sayisindan fazla urun girdiniz";
+                                throw new InvalidCastException(productSizeError);
+                            } else
+                            {
+                                string successMessage = "Basarili bir sekilde eklendi";
+                                MessageBox.Show(successMessage);
+                                double result = Convert.ToDouble(miktar) - Convert.ToDouble(miktarLabel);
+                                return new Tuple<double, double>(Convert.ToDouble(id), result); ;
+                            }
+
+                        }
+
+
+                    }
+
+                }
+            }
+            string dangerMessage = "Boyle bir irsaliyeNo yoktur!";
             throw new InvalidCastException(dangerMessage);
         }
 
