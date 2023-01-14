@@ -41,7 +41,8 @@ namespace deneme1
                     tblpm.alisfiyat = Convert.ToDouble(PMprice.Text);
                     try
                     {
-                        ProviderCheck(PMname.Text.Trim());
+                        string queryString ="SELECT tedarikciadi FROM dbo.Tedarikci;";
+                        ProviderCheck(PMname.Text.Trim(),queryString);
                         Random rand = new Random();
                         long randnum2 = (long)(rand.NextDouble() * 9999999999999) + 1000000000000;                   
                         tblpm.irsaliyenumarasi = randnum2;
@@ -102,14 +103,12 @@ namespace deneme1
             main.Show();
         }
 
-        private static void ProviderCheck(string tedarikciAd)
+        private static void ProviderCheck(string tedarikciAd,string queryString)
 
         {
             string machineName = Environment.MachineName;
             string connectionHost = string.Format(@"Data Source={0}\SQLEXPRESS;Initial Catalog=proje_deneme;Integrated Security=True", machineName);
             string connectionString = connectionHost;
-            string queryString =
-                "SELECT tedarikciadi FROM dbo.Tedarikci;";
             using (SqlConnection connection = new SqlConnection(
                        connectionString))
             {
