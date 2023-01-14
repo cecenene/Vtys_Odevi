@@ -78,16 +78,16 @@ namespace deneme1
             {   try
                 {
                     long irsaliyeNo = Convert.ToInt64(PMprice.Text);
-                        double amount = Convert.ToDouble(PMamount.Text);
-                        Tedarik tblpm = new Tedarik();
+                    double amount = Convert.ToDouble(PMamount.Text);
+                    Tedarik tblpm = new Tedarik();
                     //Tedarik tblpm = ent.Tedarik.First(f => Convert.ToInt64(f.irsaliyenumarasi) == irsaliyeNo);
                     try
                     {
                         Tuple<double, double> product = ProcurementCheck(amount, irsaliyeNo);
                         Tedarik tedarik = ent.Tedarik.Find(product.Item1);
                         tedarik.miktar = product.Item2;
-                        string text = tedarik.id+" " + tedarik.tedarikciadi + " " + tedarik.tur + " "+ amount+" " + tedarik.alisfiyat +" " + tedarik.irsaliyenumarasi ;
-                        File.WriteAllText("tedarik.txt", text);
+                        string text = Convert.ToString(tedarik.id).Trim()+" " + Convert.ToString(tedarik.tedarikciadi).Trim() + " " + Convert.ToString(tedarik.tur).Trim() + " "+ Convert.ToString(amount).Trim()+" " + Convert.ToString(tedarik.alisfiyat).Trim() +" " + Convert.ToString(tedarik.irsaliyenumarasi).Trim() + "\r\n";
+                        File.AppendAllText("tedarik.txt", text);
                         ent.SaveChanges();
                         PMtype.Clear();
                         PMamount.Clear();
@@ -213,6 +213,31 @@ namespace deneme1
 
         private void button9_Click(object sender, EventArgs e)
         {
+            bool isFileExist = File.Exists("tedarik.txt");
+            if (isFileExist)
+            {
+                var lines = File.ReadAllLines("tedarik.txt");
+               
+                    for (var i = 0; i < lines.Length; i += 1)
+                    {
+                        Random rand = new Random();
+                        long randnum2 = (long)(rand.NextDouble() * 9999999999999) + 1000000000000;
+                        var line = lines[i];
+                        string[] tedarik = line.Split(' ');
+                        Urun tblpm = new Urun();
+                        tblpm.alis_fiyat = Convert.ToDouble(tedarik[4]);
+                        tblpm.tur = tedarik[2];
+                        tblpm.irsaliyeno = Convert.ToInt64(tedarik[5]);
+                        tblpm.miktar = Convert.ToInt16(tedarik[3]);
+                        tblpm.satis_fiyat = 0;
+                        tblpm.barkod = randnum2;
+                        ent.Urun.Add(tblpm);
+                        ent.SaveChanges();
+                }
+         
+                File.Delete("tedarik.txt");
+
+            }
             Application.Exit();
         }
 
