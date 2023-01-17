@@ -231,7 +231,16 @@ namespace deneme1
                         tblpm.miktar = Convert.ToInt16(tedarik[3]);
                         tblpm.satis_fiyat = 0;
                         tblpm.barkod = randnum2;
-                        ent.Urun.Add(tblpm);
+                        Odeme odeme = new Odeme();
+                        odeme.musteriadi= "Cenkay";
+                        odeme.saticiadi = tedarik[1];
+                        odeme.odememiktari = Convert.ToInt16(tedarik[3]) * Convert.ToDouble(tedarik[4]);
+                        DateTime dateTime = DateTime.UtcNow.Date;
+                        odeme.odemetarihi = dateTime;
+
+
+                    ent.Urun.Add(tblpm);
+                    ent.Odeme.Add(odeme);
                         ent.SaveChanges();
                 }
          
