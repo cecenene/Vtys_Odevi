@@ -26,7 +26,7 @@ namespace deneme1
             guna2DataGridView1.DataSource = ent.Urun.ToList();
         }
 
-        private void Padd_Click(object sender, EventArgs e)
+       /* private void Padd_Click(object sender, EventArgs e)
         {
             if (Ptype.Text == "" || Pprice.Text == "")
             {
@@ -52,7 +52,7 @@ namespace deneme1
                     MessageBox.Show(Myex.Message);
                 }
             }
-        }
+        } */
 
         private void button9_Click(object sender, EventArgs e)
         {          
@@ -61,7 +61,7 @@ namespace deneme1
 
         private void Pedit_Click(object sender, EventArgs e)
         {
-            if (Ptype.Text == "")
+            if (Pid.Text == "")
             {
                 MessageBox.Show("Missing information");
             }
@@ -69,12 +69,16 @@ namespace deneme1
             {
                 try
                 {
-                    string tur = Ptype.Text;
-                    Urun tblu = ent.Urun.First(f => f.tur == tur);
-                    tblu.tur = Ptype.Text;
+                    int id = Convert.ToInt16(Pid.Text);
+                    Urun tblu = ent.Urun.First(f => f.id == id);
+                    tblu.tur = Pid.Text;
                     tblu.satis_fiyat = Convert.ToDouble(Pprice.Text);
+                    double karoran = ((tblu.satis_fiyat - tblu.alis_fiyat) / tblu.alis_fiyat) * 100;
+                    double karmarj = ((tblu.satis_fiyat - tblu.alis_fiyat) / tblu.satis_fiyat) * 100;
+                    tblu.karlilik = karoran;
+                    tblu.kar_marji = karmarj; 
                     ent.SaveChanges();
-                    Ptype.Clear();
+                    Pid.Clear();
                     Pprice.Clear();
                     MessageBox.Show("Product Successfully Edited");
                     guna2DataGridView1.DataSource = ent.Urun.ToList();
@@ -89,7 +93,7 @@ namespace deneme1
 
         private void Pdelete_Click(object sender, EventArgs e)
         {
-            if (Ptype.Text == "")
+            if (Pid.Text == "")
             {
                 MessageBox.Show("Missing information");
             }
@@ -97,11 +101,11 @@ namespace deneme1
             {
                 try
                 {
-                    string tur = Ptype.Text;
+                    string tur = Pid.Text;
                     Urun tblu = ent.Urun.First(f => f.tur == tur);
                     ent.Urun.Remove(tblu);
                     ent.SaveChanges();
-                    Ptype.Clear();
+                    Pid.Clear();
                     Pprice.Clear();
                     MessageBox.Show("Product Successfully Removed");
                     guna2DataGridView1.DataSource = ent.Urun.ToList();
@@ -123,7 +127,7 @@ namespace deneme1
 
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            Ptype.Text = guna2DataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+            Pid.Text = guna2DataGridView1.SelectedRows[0].Cells[0].Value.ToString();
             Pprice.Text = guna2DataGridView1.SelectedRows[0].Cells[2].Value.ToString();
         }
 
