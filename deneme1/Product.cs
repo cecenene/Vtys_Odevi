@@ -26,33 +26,6 @@ namespace deneme1
             guna2DataGridView1.DataSource = ent.Urun.ToList();
         }
 
-       /* private void Padd_Click(object sender, EventArgs e)
-        {
-            if (Ptype.Text == "" || Pprice.Text == "")
-            {
-                MessageBox.Show("Missing information");
-            }
-            else
-            {
-                try
-                {
-                    Urun tblu = new Urun();
-                    tblu.tur = Ptype.Text;
-                    tblu.satis_fiyat = Convert.ToDouble(Pprice.Text);
-                    ent.Urun.Add(tblu);
-                    ent.SaveChanges();
-                    Ptype.Clear();
-                    Pprice.Clear();
-                    MessageBox.Show("Product Successfully Added");
-                    guna2DataGridView1.DataSource = ent.Urun.ToList();
-
-                }
-                catch (Exception Myex)
-                {
-                    MessageBox.Show(Myex.Message);
-                }
-            }
-        } */
 
         private void button9_Click(object sender, EventArgs e)
         {          
