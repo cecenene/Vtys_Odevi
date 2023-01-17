@@ -31,7 +31,7 @@ namespace deneme1
         {          
             Application.Exit();
         }
-
+        //test
         private void Pedit_Click(object sender, EventArgs e)
         {
             if (Pid.Text == "")
