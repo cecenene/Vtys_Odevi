@@ -114,6 +114,7 @@ namespace deneme1
             this.Hide();
             MainForm main = new MainForm();
             main.Show();
+            Add_To_Odeme();
         }
 
         private static void ProviderCheck(string tedarikciAd)
@@ -213,41 +214,46 @@ namespace deneme1
 
         private void button9_Click(object sender, EventArgs e)
         {
+            Add_To_Odeme();
+            Application.Exit();
+        }
+
+        private void Add_To_Odeme()
+        {
             bool isFileExist = File.Exists("tedarik.txt");
             if (isFileExist)
             {
                 var lines = File.ReadAllLines("tedarik.txt");
-               
-                    for (var i = 0; i < lines.Length; i++)
-                    {
-                        Random rand = new Random();
-                        long randnum2 = (long)(rand.NextDouble() * 9999999999999) + 1000000000000;
-                        var line = lines[i];
-                        string[] tedarik = line.Split(' ');
-                        Urun tblpm = new Urun();
-                        tblpm.alis_fiyat = Convert.ToDouble(tedarik[4]);
-                        tblpm.tur = tedarik[2];
-                        tblpm.irsaliyeno = Convert.ToInt64(tedarik[5]);
-                        tblpm.miktar = Convert.ToInt16(tedarik[3]);
-                        tblpm.satis_fiyat = 0;
-                        tblpm.barkod = randnum2;
-                        Odeme odeme = new Odeme();
-                        odeme.musteriadi= "Cenkay";
-                        odeme.saticiadi = tedarik[1];
-                        odeme.odememiktari = Convert.ToInt16(tedarik[3]) * Convert.ToDouble(tedarik[4]);
-                        DateTime dateTime = DateTime.UtcNow.Date;
-                        odeme.odemetarihi = dateTime;
+
+                for (var i = 0; i < lines.Length; i++)
+                {
+                    Random rand = new Random();
+                    long randnum2 = (long)(rand.NextDouble() * 9999999999999) + 1000000000000;
+                    var line = lines[i];
+                    string[] tedarik = line.Split(' ');
+                    Urun tblpm = new Urun();
+                    tblpm.alis_fiyat = Convert.ToDouble(tedarik[4]);
+                    tblpm.tur = tedarik[2];
+                    tblpm.irsaliyeno = Convert.ToInt64(tedarik[5]);
+                    tblpm.miktar = Convert.ToInt16(tedarik[3]);
+                    tblpm.satis_fiyat = 0;
+                    tblpm.barkod = randnum2;
+                    Odeme odeme = new Odeme();
+                    odeme.musteriadi = "Cenkay";
+                    odeme.saticiadi = tedarik[1];
+                    odeme.odememiktari = Convert.ToInt16(tedarik[3]) * Convert.ToDouble(tedarik[4]);
+                    DateTime dateTime = DateTime.UtcNow.Date;
+                    odeme.odemetarihi = dateTime;
 
 
                     ent.Urun.Add(tblpm);
                     ent.Odeme.Add(odeme);
-                        ent.SaveChanges();
+                    ent.SaveChanges();
                 }
-         
+
                 File.Delete("tedarik.txt");
 
             }
-            Application.Exit();
         }
 
         private void Procurement_Load(object sender, EventArgs e)
