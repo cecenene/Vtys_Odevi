@@ -218,7 +218,7 @@ namespace deneme1
             {
                 var lines = File.ReadAllLines("tedarik.txt");
                
-                    for (var i = 0; i < lines.Length; i += 1)
+                    for (var i = 0; i < lines.Length; i++)
                     {
                         Random rand = new Random();
                         long randnum2 = (long)(rand.NextDouble() * 9999999999999) + 1000000000000;
