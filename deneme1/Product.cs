@@ -44,7 +44,6 @@ namespace deneme1
                 {
                     int id = Convert.ToInt16(Pid.Text);
                     Urun tblu = ent.Urun.First(f => f.id == id);
-                    tblu.tur = Pid.Text;
                     tblu.satis_fiyat = Convert.ToDouble(Pprice.Text);
                     double karoran = ((tblu.satis_fiyat - tblu.alis_fiyat) / tblu.alis_fiyat) * 100;
                     double karmarj = ((tblu.satis_fiyat - tblu.alis_fiyat) / tblu.satis_fiyat) * 100;
@@ -74,8 +73,8 @@ namespace deneme1
             {
                 try
                 {
-                    string tur = Pid.Text;
-                    Urun tblu = ent.Urun.First(f => f.tur == tur);
+                    int id = Convert.ToInt16(Pid.Text);
+                    Urun tblu = ent.Urun.First(f => f.id == id);
                     ent.Urun.Remove(tblu);
                     ent.SaveChanges();
                     Pid.Clear();

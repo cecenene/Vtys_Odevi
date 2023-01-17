@@ -69,8 +69,8 @@ namespace deneme1
         private void MFpayment_Click(object sender, EventArgs e)
         {
             this.Hide();
-            //Payment payment = new Payment();
-            //payment.Show();
+            Payment payment = new Payment();
+            payment.Show();
         }
 
         private void MFcustomer_Click(object sender, EventArgs e)
@@ -83,8 +83,8 @@ namespace deneme1
         private void MFcashsale_Click(object sender, EventArgs e)
         {
             this.Hide();
-            //Cashsale login = new Login();
-            //login.Show();
+            CashSale cashsale = new CashSale();
+            cashsale.Show();
         }
 
         private void MFcreditsales_Click(object sender, EventArgs e)
