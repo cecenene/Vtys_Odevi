@@ -40,8 +40,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.Pback = new System.Windows.Forms.Button();
             this.Pdelete = new System.Windows.Forms.Button();
-            this.Padd = new System.Windows.Forms.Button();
-            this.Ptype = new System.Windows.Forms.RichTextBox();
+            this.Pid = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.Pprice = new System.Windows.Forms.RichTextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -158,6 +157,7 @@
             this.guna2DataGridView1.ThemeStyle.RowsStyle.Height = 24;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.guna2DataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellContentClick);
             // 
             // label4
             // 
@@ -176,7 +176,7 @@
             this.Pback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Pback.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Pback.ForeColor = System.Drawing.Color.White;
-            this.Pback.Location = new System.Drawing.Point(136, 398);
+            this.Pback.Location = new System.Drawing.Point(265, 347);
             this.Pback.Name = "Pback";
             this.Pback.Size = new System.Drawing.Size(118, 45);
             this.Pback.TabIndex = 29;
@@ -190,7 +190,7 @@
             this.Pdelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Pdelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Pdelete.ForeColor = System.Drawing.Color.White;
-            this.Pdelete.Location = new System.Drawing.Point(260, 347);
+            this.Pdelete.Location = new System.Drawing.Point(141, 347);
             this.Pdelete.Name = "Pdelete";
             this.Pdelete.Size = new System.Drawing.Size(118, 45);
             this.Pdelete.TabIndex = 28;
@@ -198,30 +198,16 @@
             this.Pdelete.UseVisualStyleBackColor = false;
             this.Pdelete.Click += new System.EventHandler(this.Pdelete_Click);
             // 
-            // Padd
+            // Pid
             // 
-            this.Padd.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.Padd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Padd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Padd.ForeColor = System.Drawing.Color.White;
-            this.Padd.Location = new System.Drawing.Point(12, 347);
-            this.Padd.Name = "Padd";
-            this.Padd.Size = new System.Drawing.Size(118, 45);
-            this.Padd.TabIndex = 27;
-            this.Padd.Text = "Add";
-            this.Padd.UseVisualStyleBackColor = false;
-            this.Padd.Click += new System.EventHandler(this.Padd_Click);
-            // 
-            // Ptype
-            // 
-            this.Ptype.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Ptype.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Ptype.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.Ptype.Location = new System.Drawing.Point(154, 213);
-            this.Ptype.Name = "Ptype";
-            this.Ptype.Size = new System.Drawing.Size(224, 34);
-            this.Ptype.TabIndex = 33;
-            this.Ptype.Text = "";
+            this.Pid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Pid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Pid.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.Pid.Location = new System.Drawing.Point(154, 213);
+            this.Pid.Name = "Pid";
+            this.Pid.Size = new System.Drawing.Size(224, 34);
+            this.Pid.TabIndex = 33;
+            this.Pid.Text = "";
             // 
             // label5
             // 
@@ -230,9 +216,9 @@
             this.label5.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.label5.Location = new System.Drawing.Point(12, 222);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(129, 25);
+            this.label5.Size = new System.Drawing.Size(103, 25);
             this.label5.TabIndex = 32;
-            this.label5.Text = "Product Type";
+            this.label5.Text = "Product ID";
             // 
             // Pprice
             // 
@@ -262,7 +248,7 @@
             this.Pedit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Pedit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Pedit.ForeColor = System.Drawing.Color.White;
-            this.Pedit.Location = new System.Drawing.Point(136, 347);
+            this.Pedit.Location = new System.Drawing.Point(17, 347);
             this.Pedit.Name = "Pedit";
             this.Pedit.Size = new System.Drawing.Size(118, 45);
             this.Pedit.TabIndex = 36;
@@ -278,13 +264,12 @@
             this.Controls.Add(this.Pedit);
             this.Controls.Add(this.Pprice);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.Ptype);
+            this.Controls.Add(this.Pid);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.guna2DataGridView1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.Pback);
             this.Controls.Add(this.Pdelete);
-            this.Controls.Add(this.Padd);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -311,8 +296,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button Pback;
         private System.Windows.Forms.Button Pdelete;
-        private System.Windows.Forms.Button Padd;
-        private System.Windows.Forms.RichTextBox Ptype;
+        private System.Windows.Forms.RichTextBox Pid;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RichTextBox Pprice;
         private System.Windows.Forms.Label label6;

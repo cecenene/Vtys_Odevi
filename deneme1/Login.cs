@@ -78,5 +78,11 @@ namespace deneme1
             string dangerMessage = "Sifre dogru degil!";
             throw new InvalidCastException(dangerMessage);
         }
+
+        private void LClear_Click(object sender, EventArgs e)
+        {
+            LuserId.Clear();
+            Lpassword.Clear();
+        }
     }
 }
