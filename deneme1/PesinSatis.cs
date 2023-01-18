@@ -16,7 +16,7 @@ namespace deneme1
 
         public short urunid { get; set; }
 
-        public double miktar { get; set; }
+        public int miktar { get; set; }
 
         [Required]
         [StringLength(10)]

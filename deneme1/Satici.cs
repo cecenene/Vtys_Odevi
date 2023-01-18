@@ -17,6 +17,6 @@ namespace deneme1
 
         public short sifre { get; set; }
 
-        public float bakiye { get; set; }
+        public double bakiye { get; set; }
     }
 }
