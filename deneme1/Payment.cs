@@ -50,6 +50,16 @@ namespace deneme1
             {
                 MessageBox.Show("Bu idli kullanici bulunamadi!");
             }
+            Satici satici = ent.Satici.Find(2);     // BU İD'YE DİKKAT ET HATA ATARSA
+            if (satici == null)
+            {
+                MessageBox.Show("Bu idli kullanici bulunamadi!(Development Error-Payment.cs-53)");
+            }
+            satici.bakiye -= odeme.odememiktari;
+            ent.Odeme.Remove(odeme);
+            ent.SaveChanges();
+            guna2DataGridView1.DataSource = ent.Odeme.ToList();
+
         }
 
         private bool Missing_Information()
