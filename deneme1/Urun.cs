@@ -25,7 +25,7 @@ namespace deneme1
 
         public long? irsaliyeno { get; set; }
 
-        public short? miktar { get; set; }
+        public int miktar { get; set; }
 
         public double? karlilik { get; set; }
     }

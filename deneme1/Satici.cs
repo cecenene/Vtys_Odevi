@@ -16,5 +16,7 @@ namespace deneme1
         public string kullaniciad { get; set; }
 
         public short sifre { get; set; }
+
+        public double bakiye { get; set; }
     }
 }
