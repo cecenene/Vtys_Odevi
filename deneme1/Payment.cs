@@ -33,10 +33,34 @@ namespace deneme1
 
         private void Paympay_Click(object sender, EventArgs e)
         {
-            
+            bool ThereIsNoMissInfo = Missing_Information();
+            if (ThereIsNoMissInfo)
+            {
+                Pay_Debt();
+            }
+
         }
 
+        private void Pay_Debt()
+        {
 
+            string paymId = PaymID.Text;
+            Odeme odeme = ent.Odeme.Find(Convert.ToInt32(paymId));
+            if(odeme == null)
+            {
+                MessageBox.Show("Bu idli kullanici bulunamadi!");
+            }
+        }
+
+        private bool Missing_Information()
+        {
+            if (PaymID.Text == "")
+            {
+                MessageBox.Show("Missing information");
+                return false;
+            }
+            return true;
+        }
 
         private void button9_Click(object sender, EventArgs e)
         {
