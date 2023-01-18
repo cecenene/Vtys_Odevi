@@ -58,6 +58,7 @@ namespace deneme1
             satici.bakiye -= odeme.odememiktari;
             ent.Odeme.Remove(odeme);
             ent.SaveChanges();
+            PaymID.Clear();
             guna2DataGridView1.DataSource = ent.Odeme.ToList();
 
         }
