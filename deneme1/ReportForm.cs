@@ -21,15 +21,8 @@ namespace deneme1
             InitializeComponent();
         }
 
-        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+        Model1 ent = new Model1();
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
         private static void ProviderCheck()
 
         {
@@ -61,6 +54,29 @@ namespace deneme1
 
                 }
             }
+        }
+
+        private void ReportForm_Load(object sender, EventArgs e)
+        {
+            guna2DataGridView1.DataSource = ent.PesinSatis.ToList();
+            guna2DataGridView1.DataSource = ent.VeresiyeSatis.ToList();
+        }
+
+        private void Rreport_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Rback_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainForm main = new MainForm();
+            main.Show();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
