@@ -71,6 +71,7 @@ namespace deneme1
                 CSname.Clear();
                 guna2DataGridView1.DataSource = ent.Urun.ToList();
                 guna2DataGridView2.DataSource = ent.PesinSatis.ToList();
+                MessageBox.Show("Stok durumu kritik, tedarik yapınız!");
 
 
             }

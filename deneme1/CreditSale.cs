@@ -96,6 +96,7 @@ namespace deneme1
                 CreSbarcode.Clear();
                 guna2DataGridView1.DataSource = ent.Urun.ToList();
                 guna2DataGridView2.DataSource = ent.VeresiyeSatis.ToList();
+                MessageBox.Show("Stok durumu kritik, tedarik yapınız!");
 
 
             }
