@@ -26,7 +26,9 @@ namespace deneme1
 
         private void Paybback_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            MainForm main = new MainForm();
+            main.Show();
         }
 
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
