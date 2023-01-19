@@ -85,10 +85,11 @@ namespace deneme1
                 DateTime odemetarihi = time.AddMonths(1);
                 creditSale.odemetarihi = odemetarihi;
                 urun.miktar = 0;
+                odeme.saticiadi = "Cenkay";
                 odeme.musteriadi = customerName;
                 odeme.odememiktari = urun.miktar * urun.satis_fiyat;
                 odeme.odemetarihi = odemetarihi;
-                odeme.saticiadi = "Cenkay";
+                
                 ent.VeresiyeSatis.Add(creditSale);
                 ent.Odeme.Add(odeme);
                 ent.SaveChanges();
