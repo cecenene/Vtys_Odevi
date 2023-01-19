@@ -16,7 +16,7 @@ namespace deneme1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CreditSale());
+            Application.Run(new LoadScreen());
         }
     }
 }
