@@ -49,11 +49,13 @@ namespace deneme1
             if(odeme == null)
             {
                 MessageBox.Show("Bu idli kullanici bulunamadi!");
+                return;
             }
             Satici satici = ent.Satici.Find(2);     // BU İD'YE DİKKAT ET HATA ATARSA
             if (satici == null)
             {
                 MessageBox.Show("Bu idli kullanici bulunamadi!(Development Error-Payment.cs-53)");
+                return;
             }
             satici.bakiye -= odeme.odememiktari;
             ent.Odeme.Remove(odeme);

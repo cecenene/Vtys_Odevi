@@ -90,15 +90,15 @@ namespace deneme1
         private void MFcreditsales_Click(object sender, EventArgs e)
         {
             this.Hide();
-            //Creditsale login = new Login();
-            //login.Show();
+            CreditSale creditSale = new CreditSale();
+            creditSale.Show();
         }
 
         private void MFpayback_Click(object sender, EventArgs e)
         {
             this.Hide();
-            //Payback login = new Login();
-            //login.Show();
+            Payback payBack = new Payback();
+            payBack.Show();
         }
     }
 }

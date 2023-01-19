@@ -21,7 +21,11 @@ namespace deneme1
 
         private void Paybgetp_Click(object sender, EventArgs e)
         {
-
+            bool ThereIsNoMissInfo = Missing_Information();
+            if (ThereIsNoMissInfo)
+            {
+                Pay_Back();
+            }
         }
 
         private void Paybback_Click(object sender, EventArgs e)
@@ -31,9 +35,42 @@ namespace deneme1
             main.Show();
         }
 
-        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void Pay_Back()
         {
 
+            string paymId = PaybID.Text;
+            Odeme odeme = ent.Odeme.Find(Convert.ToInt32(paymId));
+            if (odeme == null)
+            {
+                MessageBox.Show("Bu idli kullanici bulunamadi!");
+                return;
+            }
+            Satici satici = ent.Satici.Find(2);     // BU İD'YE DİKKAT ET HATA ATARSA
+            if (satici == null)
+            {
+                MessageBox.Show("Bu idli kullanici bulunamadi!(Development Error-PayBack.cs-43)");
+                return;
+            }
+            satici.bakiye += odeme.odememiktari;
+            ent.Odeme.Remove(odeme);
+            ent.SaveChanges();
+            PaybID.Clear();
+            guna2DataGridView1.DataSource = ent.Odeme.ToList();
+
+        }
+
+        private bool Missing_Information()
+        {
+            if (PaybID.Text == "")
+            {
+                MessageBox.Show("Missing information");
+                return false;
+            }
+            return true;
+        }
+        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            PaybID.Text = guna2DataGridView1.SelectedRows[0].Cells[0].Value.ToString();
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -43,7 +80,12 @@ namespace deneme1
 
         private void Payback_Load(object sender, EventArgs e)
         {
-            guna2DataGridView1.DataSource = ent.BorcOdeme.ToList();
+            guna2DataGridView1.DataSource = ent.Odeme.ToList();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

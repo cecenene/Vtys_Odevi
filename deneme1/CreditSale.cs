@@ -54,6 +54,7 @@ namespace deneme1
             long barcode = Convert.ToInt64(CreSbarcode.Text);
             string customerName = CreSname.Text;
             VeresiyeSatis creditSale = new VeresiyeSatis();
+            Odeme odeme = new Odeme();
             Satici satici = ent.Satici.Find(2);     // BU İD'YE DİKKAT ET HATA ATARSA
             if (satici == null)
             {
@@ -84,7 +85,12 @@ namespace deneme1
                 DateTime odemetarihi = time.AddMonths(1);
                 creditSale.odemetarihi = odemetarihi;
                 urun.miktar = 0;
+                odeme.musteriadi = customerName;
+                odeme.odememiktari = urun.miktar * urun.satis_fiyat;
+                odeme.odemetarihi = odemetarihi;
+                odeme.saticiadi = "Cenkay";
                 ent.VeresiyeSatis.Add(creditSale);
+                ent.Odeme.Add(odeme);
                 ent.SaveChanges();
                 CreSname.Clear();
                 CreSbarcode.Clear();
