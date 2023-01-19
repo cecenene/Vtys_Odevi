@@ -149,6 +149,12 @@
     <Compile Include="Provider.Designer.cs">
       <DependentUpon>Provider.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForm.Designer.cs">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Satici.cs" />
     <Compile Include="Sqlbaglantisi.cs" />
     <Compile Include="Tedarik.cs" />
@@ -202,6 +208,9 @@
     </Compile>
     <EmbeddedResource Include="Provider.resx">
       <DependentUpon>Provider.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForm.resx">
+      <DependentUpon>ReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User.resx">
       <DependentUpon>User.cs</DependentUpon>
