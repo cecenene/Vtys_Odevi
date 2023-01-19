@@ -89,7 +89,7 @@ namespace deneme1
                 CreSname.Clear();
                 CreSbarcode.Clear();
                 guna2DataGridView1.DataSource = ent.Urun.ToList();
-                guna2DataGridView2.DataSource = ent.PesinSatis.ToList();
+                guna2DataGridView2.DataSource = ent.VeresiyeSatis.ToList();
 
 
             }
