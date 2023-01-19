@@ -11,6 +11,7 @@ using System.Xml.Linq;
 using System.Data.SqlClient;
 
 
+
 namespace deneme1
 {
     public partial class CashSale : Form

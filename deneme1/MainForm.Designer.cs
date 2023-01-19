@@ -43,6 +43,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.MFpayment = new System.Windows.Forms.Button();
             this.MFcreditsales = new System.Windows.Forms.Button();
+            this.MFreport = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -243,11 +244,26 @@
             this.MFcreditsales.UseVisualStyleBackColor = false;
             this.MFcreditsales.Click += new System.EventHandler(this.MFcreditsales_Click);
             // 
+            // MFreport
+            // 
+            this.MFreport.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.MFreport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MFreport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MFreport.ForeColor = System.Drawing.Color.White;
+            this.MFreport.Location = new System.Drawing.Point(309, 209);
+            this.MFreport.Name = "MFreport";
+            this.MFreport.Size = new System.Drawing.Size(118, 45);
+            this.MFreport.TabIndex = 12;
+            this.MFreport.Text = "REPORT";
+            this.MFreport.UseVisualStyleBackColor = false;
+            this.MFreport.Click += new System.EventHandler(this.MFreport_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(958, 488);
+            this.Controls.Add(this.MFreport);
             this.Controls.Add(this.MFcreditsales);
             this.Controls.Add(this.MFpayment);
             this.Controls.Add(this.panel2);
@@ -288,5 +304,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button MFpayment;
         private System.Windows.Forms.Button MFcreditsales;
+        private System.Windows.Forms.Button MFreport;
     }
 }

@@ -7,6 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.IO;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+
 //Payment ın sayfasını ekle 
 //CashSale ekle
 //Creditsale ekle
@@ -14,11 +19,13 @@ using System.Windows.Forms;
 namespace deneme1
 {
     public partial class MainForm : Form
+
     {
         public MainForm()
         {
             InitializeComponent();
         }
+
 
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -99,6 +106,18 @@ namespace deneme1
             this.Hide();
             Payback payBack = new Payback();
             payBack.Show();
+        }
+
+        private void MFreport_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ReportForm reportForm = new ReportForm();
+            reportForm.Show();
+        }
+
+        private void btnPdf_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }
