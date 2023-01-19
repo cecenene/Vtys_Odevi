@@ -24,7 +24,14 @@ namespace deneme1
             bool ThereIsNoMissInfo = Missing_Information();
             if (ThereIsNoMissInfo)
             {
-                Pay_Back();
+                try {
+                    Check_Password();
+                    Pay_Back();
+
+                } catch 
+                {
+
+                }
             }
         }
 
@@ -37,7 +44,6 @@ namespace deneme1
 
         private void Pay_Back()
         {
-
             string paymId = PaybID.Text;
             Odeme odeme = ent.Odeme.Find(Convert.ToInt32(paymId));
             if (odeme == null)
@@ -55,13 +61,14 @@ namespace deneme1
             ent.Odeme.Remove(odeme);
             ent.SaveChanges();
             PaybID.Clear();
+            paybPassword.Clear();
             guna2DataGridView1.DataSource = ent.Odeme.ToList();
 
         }
 
         private bool Missing_Information()
         {
-            if (PaybID.Text == "")
+            if (PaybID.Text == "" || paybPassword.Text == "")
             {
                 MessageBox.Show("Missing information");
                 return false;
@@ -84,6 +91,23 @@ namespace deneme1
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Check_Password()
+        {
+            if(paybPassword.Text != "321")
+            {
+                MessageBox.Show("Sifre yanlis!");
+                string productSizeError = "Sifre yanlis!";
+                throw new InvalidCastException(productSizeError);
+            }
+            return;
+            
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
