@@ -35,7 +35,9 @@ namespace deneme1
 
         private void CreSback_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            MainForm main = new MainForm();
+            main.Show();
         }
 
         private void CreditSale_Load(object sender, EventArgs e)
