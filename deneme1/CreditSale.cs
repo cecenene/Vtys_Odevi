@@ -16,5 +16,32 @@ namespace deneme1
         {
             InitializeComponent();
         }
+        Model1 ent = new Model1();
+
+        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CreSsale_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CreSback_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CreditSale_Load(object sender, EventArgs e)
+        {
+            guna2DataGridView1.DataSource = ent.Urun.ToList();
+            guna2DataGridView2.DataSource = ent.VeresiyeSatis.ToList();
+        }
     }
 }
