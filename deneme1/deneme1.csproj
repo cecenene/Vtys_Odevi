@@ -104,6 +104,12 @@
     <Compile Include="Model1.cs" />
     <Compile Include="Musteri.cs" />
     <Compile Include="Odeme.cs" />
+    <Compile Include="Payback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payback.Designer.cs">
+      <DependentUpon>Payback.cs</DependentUpon>
+    </Compile>
     <Compile Include="Payment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +152,7 @@
     <EmbeddedResource Include="CashSale.resx">
       <DependentUpon>CashSale.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CreditSale.resx" />
     <EmbeddedResource Include="Customer.resx">
       <DependentUpon>Customer.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payback.resx">
+      <DependentUpon>Payback.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Payment.resx">
       <DependentUpon>Payment.cs</DependentUpon>
