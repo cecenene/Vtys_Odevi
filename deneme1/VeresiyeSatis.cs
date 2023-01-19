@@ -25,8 +25,8 @@ namespace deneme1
         [StringLength(10)]
         public string musteriadi { get; set; }
 
-        public double? tutar { get; set; }
+        public double tutar { get; set; }
 
-        public double? borcbakiyesi { get; set; }
+        public DateTime odemetarihi { get; set; }
     }
 }

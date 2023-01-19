@@ -152,7 +152,9 @@
     <EmbeddedResource Include="CashSale.resx">
       <DependentUpon>CashSale.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreditSale.resx" />
+    <EmbeddedResource Include="CreditSale.resx">
+      <DependentUpon>CreditSale.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Customer.resx">
       <DependentUpon>Customer.cs</DependentUpon>
     </EmbeddedResource>
