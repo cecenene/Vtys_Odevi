@@ -139,7 +139,7 @@ namespace deneme1
             return true;
         }
 
-        private void CSbuy_Click(object sender, EventArgs e)
+        private void CSsale_Click(object sender, EventArgs e)
         {
             bool ThereIsNoMissInfo = Missing_Information();
             if(ThereIsNoMissInfo)
