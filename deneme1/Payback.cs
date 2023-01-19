@@ -16,6 +16,8 @@ namespace deneme1
         {
             InitializeComponent();
         }
+        Model1 ent = new Model1();
+
 
         private void Paybgetp_Click(object sender, EventArgs e)
         {
@@ -35,6 +37,11 @@ namespace deneme1
         private void button9_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Payback_Load(object sender, EventArgs e)
+        {
+            guna2DataGridView1.DataSource = ent.BorcOdeme.ToList();
         }
     }
 }
