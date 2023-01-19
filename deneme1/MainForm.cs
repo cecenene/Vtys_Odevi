@@ -9,13 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
-//using iTextSharp.text;
-//using iTextSharp.text.pdf;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
-//Payment ın sayfasını ekle 
-//CashSale ekle
-//Creditsale ekle
-//payback ekle
 namespace deneme1
 {
     public partial class MainForm : Form
